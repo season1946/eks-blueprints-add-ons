@@ -1,8 +1,8 @@
-{{- if and (.Values.kubecost) (.Values.kubecost.enable) -}}
+{{- if and (.Values.traefik) (.Values.traefik.enable) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubecost
+  name: velero
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -10,20 +10,20 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: add-ons/kubecost
+    path: add-ons/velero
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
-        kubecost:
-        {{- toYaml .Values.kubecost | nindent 10 }}
+        velero:
+        {{- toYaml .Values.velero | nindent 10 }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: kubecost
+    namespace: velero
   syncPolicy:
     automated:
       prune: true
     syncOptions:
-    - CreateNamespace=true      
+    - CreateNamespace=true
     retry:
       limit: 1
       backoff:

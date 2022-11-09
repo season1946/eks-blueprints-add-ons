@@ -64,6 +64,10 @@ clusterAutoscaler:
 datadogOperator:
   enable: false
 
+# Strimzi Kafka Operator
+strimziKafkaOperator:
+  enabled: false
+
 # External DNS Values
 externalDns:
   enable: false
@@ -213,4 +217,7 @@ reporter:
   
 # NVIDIA Device Plugin Values
 nvidiaDevicePlugin:
+  enable: false
+
+velero:
   enable: false
