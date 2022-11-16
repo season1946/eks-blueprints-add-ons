@@ -5,6 +5,10 @@ region: ''
 account: ''
 clusterName: ''
 
+# hashicorp vault Values
+vault:
+  enable: true
+
 # Agones Values
 agones:
   enable: false
