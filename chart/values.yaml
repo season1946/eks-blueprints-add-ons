@@ -93,7 +93,7 @@ ingressNginx:
 
 # Grafana default Values
 grafana:
-  enable: false
+  enable: true
   serviceAccount:
     create: false
 
@@ -134,7 +134,7 @@ ondat:
 
 # Prometheus Values
 prometheus:
-  enable: false
+  enable: true
   serviceAccountName:
   roleArn:
   ampWorkspaceUrl:
