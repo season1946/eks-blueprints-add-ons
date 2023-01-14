@@ -1,3 +1,6 @@
 aws-load-balancer-controller:
   serviceAccount:
     create: false
+    name: aws-load-balancer-controller 
+  clusterName: spark-k8s-monitor
+  region: us-west-2
