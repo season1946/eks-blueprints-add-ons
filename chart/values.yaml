@@ -40,9 +40,12 @@ awsForFluentBit:
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
   enable: true
-  serviceAccountName:
+  serviceAccountName: aws-load-balancer-controller 
+  clusterName: spark-k8s-monitor
+  region: us-west-2
   podDisruptionBudget:
     maxUnavailable: 1
+
 
 # AWS Otel Collector Values
 awsOtelCollector:
